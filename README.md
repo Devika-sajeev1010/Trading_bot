@@ -6,13 +6,24 @@ This is a clean, modular Python-based CLI tool designed to connect with the Bina
 
 # How the Project is Structured
 
-To keep the code clean and easy to maintain, I broke the logic down into distinct modules rather than piling everything into one massive script:
+To keep the application highly maintainable, the codebase follows a strict separation of concerns, dividing tasks across dedicated files rather than using a single massive script:
 
-**`cli.py`**: The main entry point. It parses arguments from the command line, and if no arguments are provided, it automatically launches an interactive wizard menu to guide the user step-by-step.
-**`bot/client.py`**: Handles authentication. It pulls the API credentials safely from a hidden `.env` file and initializes the connection explicitly targeting the Binance sandbox environment (`testnet=True`).
-**`bot/validators.py`**: The local gatekeeper. It checks that the user has provided valid symbols, correct positioning sides (BUY/SELL), and that numbers like quantity and price actually make sense before sending requests over the internet.
-**`bot/orders.py`**: The execution layer. This formats the parameters into a payload, calls the specific USDT-M Futures endpoint, and catches any real-time API exceptions returned by the exchange.
-**`bot/logging_config.py`**: Manages tracking. It streams human-readable status updates to the terminal screen while writing complete, timestamped JSON/text logs to an external file.
+### Entry Point
+*   **`cli.py`**
+    The core interface of the application. It handles parsing command-line arguments. If a user runs the script without any parameters, it automatically boots up an interactive wizard menu to guide them step-by-step.
+
+### The Bot Package (`bot/`)
+*   **`bot/client.py`**
+    Manages authentication and connectivity. It securely pulls your API keys from a hidden local `.env` file and initializes the network instance explicitly configured for the Binance sandbox environment (`testnet=True`).
+
+*   **`bot/validators.py`**
+    The local data validation layer. It checks that target trading pairs, positioning directions (BUY/SELL), and numerical values (quantity/price) conform to standard rules *before* a network request is ever dispatched.
+
+*   **`bot/orders.py`**
+    The order execution engine. It structures the verified data parameters into an API payload, transmits the request to the live USDT-M Futures testnet endpoint, and safely catches any real-time server responses or exceptions.
+
+*   **`bot/logging_config.py`**
+    The central monitoring engine. It configures the logging system to stream human-readable execution snapshots directly onto your terminal screen while simultaneously writing permanent, timestamped trace receipts into your tracking file.
 
 ---
 
