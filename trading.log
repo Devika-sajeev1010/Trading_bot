@@ -1,0 +1,12 @@
+2026-07-03 23:58:25,586 - INFO - Binance Futures Testnet client session established.
+2026-07-03 23:58:25,587 - INFO - [ORDER SUMMARY] Attempting BUY MARKET | 0.01 BTCUSDT
+2026-07-03 23:58:26,678 - ERROR - Process pipeline failed: APIError(code=-2019): Margin is insufficient.
+2026-07-04 00:02:58,686 - INFO - Binance Futures Testnet client session established.
+2026-07-04 00:02:58,687 - INFO - [ORDER SUMMARY] Attempting BUY MARKET | 10.0 XRPUSDT
+2026-07-04 00:02:59,644 - ERROR - Process pipeline failed: APIError(code=-2019): Margin is insufficient.
+2026-07-04 00:03:20,499 - INFO - Binance Futures Testnet client session established.
+2026-07-04 00:03:20,500 - INFO - [ORDER SUMMARY] Attempting BUY LIMIT | 10.0 XRPUSDT
+2026-07-04 00:03:21,227 - ERROR - Process pipeline failed: APIError(code=-4164): Order's notional must be no smaller than 5 (unless you choose reduce only).
+2026-07-04 11:46:39,281 - INFO - Binance Futures Testnet client session established.
+2026-07-04 11:46:39,284 - INFO - [ORDER SUMMARY] Attempting SELL MARKET | 15.0 XRPUSDT
+2026-07-04 11:46:40,163 - INFO - [RESPONSE SUCCESS] OrderID: 2312415558 | Status: NEW
